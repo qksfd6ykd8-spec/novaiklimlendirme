@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Klima | Premium İklimlendirme</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+background:#0e1116;
+color:#fff;
+scroll-behavior:smooth;
+padding-top:90px;
+}
+
+/* HEADER */
+header{
+background:linear-gradient(90deg,#0e1116,#1c2330);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+
+.logo{
+font-size:26px;
+font-weight:800;
+color:#00c6ff;
+letter-spacing:2px;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00c6ff;
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+background:url('https://images.unsplash.com/photo-1581090700227-1e8c4f79b9a4') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 10% 50px;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.65);
+padding:60px;
+border-radius:20px;
+max-width:900px;
+}
+
+.hero h1{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#00c6ff;
+color:#000;
+font-weight:600;
+border-radius:50px;
+text-decoration:none;
+transition:0.3s;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#fff;
+}
+
+/* SECTIONS */
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:32px;
+color:#00c6ff;
+margin-bottom:50px;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1c2330;
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,198,255,0.3);
+}
+
+/* NEWS */
+.news-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.news-item{
+background:#1c2330;
+padding:20px;
+border-radius:15px;
+}
+
+.news-item h4{
+color:#00c6ff;
+font-size:16px;
+margin-bottom:10px;
+}
+
+.news-item p{
+font-size:13px;
+color:#aaa;
+margin-bottom:10px;
+}
+
+/* CALCULATOR */
+.calc-box{
+max-width:600px;
+margin:auto;
+background:#1c2330;
+padding:30px;
+border-radius:15px;
+}
+
+.calc-box input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+}
+
+.result{
+margin-top:20px;
+color:#00c6ff;
+font-size:16px;
+}
+
+/* CLOCK */
+.clock{
+text-align:center;
+margin-top:40px;
+color:#00c6ff;
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:#fff;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+/* FOOTER */
+footer{
+background:#0e1116;
+padding:40px;
+text-align:center;
+color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+.hero h1{font-size:36px}
+}
+
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:80px;
+right:0;
+background:#1c2330;
+flex-direction:column;
+width:220px;
+padding:20px;
+display:none;
+}
+
+nav.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero-overlay{
+padding:30px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">NOVA KLİMA</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+<a href="#">Anasayfa</a>
+<a href="#hizmet">Hizmetler</a>
+<a href="#haberler">Haberler</a>
+<a href="#hesaplama">Enerji Hesaplama</a>
+<a href="#iletisim">İletişim</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-overlay">
+<h1>Premium İklimlendirme Çözümleri</h1>
+<p>2014'ten beri tüm Türkiye'ye profesyonel klima ve HVAC hizmetleri.</p>
+<a href="https://wa.me/905386326133" class="btn" target="_blank">
+WhatsApp ile İletişime Geç
+</a>
+</div>
+</section>
+
+<section id="hizmet">
+<h2 class="section-title">Hizmetlerimiz</h2>
+<div class="cards">
+<div class="card"><h3>Klima Montajı</h3><p>Garantili kurulum hizmetleri.</p></div>
+<div class="card"><h3>HVAC Sistemleri</h3><p>Endüstriyel çözümler.</p></div>
+<div class="card"><h3>Teknik Servis</h3><p>Bakım ve onarım hizmetleri.</p></div>
+</div>
+</section>
+
+<section id="haberler">
+<h2 class="section-title">Güncel HVAC Haberleri</h2>
+<div class="news-container" id="news"></div>
+<div class="clock" id="clock"></div>
+</section>
+
+<section id="hesaplama">
+<h2 class="section-title">Enerji Tüketim Hesaplama</h2>
+<div class="calc-box">
+<input type="number" id="btu" placeholder="Klima Gücü (BTU)">
+<input type="number" id="hours" placeholder="Günlük Çalışma Saati">
+<input type="number" id="days" placeholder="Aylık Kullanım Günü">
+<input type="number" id="price" placeholder="Elektrik Birim Fiyatı (₺)">
+<button class="btn" onclick="calculate()">Hesapla</button>
+<div class="result" id="result"></div>
+</div>
+</section>
+
+<section id="iletisim">
+<h2 class="section-title">İletişim</h2>
+<div style="text-align:center;">
+<a href="https://wa.me/905386326133" class="btn" target="_blank">
+WhatsApp'tan Yaz
+</a>
+</div>
+</section>
+
+<footer>
+© 2026 Nova Klima | Tüm Hakları Saklıdır
+</footer>
+
+<a href="https://wa.me/905386326133" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+/* CLOCK */
+function updateClock(){
+const now=new Date();
+document.getElementById("clock").innerHTML=
+"📅 "+now.toLocaleDateString('tr-TR')+
+" | ⏰ "+now.toLocaleTimeString('tr-TR');
+}
+setInterval(updateClock,1000);
+updateClock();
+
+/* NEWS */
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.achrnews.com/rss/topic/2703-hvac-news")
+.then(res=>res.json())
+.then(data=>{
+let output="";
+data.items.slice(0,6).forEach(item=>{
+output+=`
+<div class="news-item">
+<h4>${item.title}</h4>
+<p>${new Date(item.pubDate).toLocaleDateString('tr-TR')}</p>
+<a href="${item.link}" target="_blank" style="color:#00c6ff;font-size:13px;">Haberi Oku →</a>
+</div>`;
+});
+document.getElementById("news").innerHTML=output;
+});
+
+/* ENERGY CALC */
+function calculate(){
+let btu=btu=document.getElementById("btu").value;
+let hours=document.getElementById("hours").value;
+let days=document.getElementById("days").value;
+let price=document.getElementById("price").value;
+
+if(!btu||!hours||!days||!price){
+document.getElementById("result").innerHTML="Lütfen tüm alanları doldurun.";
+return;
+}
+
+let kw=btu/3412;
+let monthlyKwh=kw*hours*days;
+let cost=monthlyKwh*price;
+
+document.getElementById("result").innerHTML=
+"⚡ Aylık Tüketim: "+monthlyKwh.toFixed(2)+" kWh<br>"+
+"💰 Tahmini Aylık Maliyet: "+cost.toFixed(2)+" ₺";
+}
+</script>
+
+</body>
+</html>
